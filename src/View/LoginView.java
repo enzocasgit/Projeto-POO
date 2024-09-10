@@ -9,45 +9,45 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class LoginView {
-    private TextField emailField;
-    private PasswordField passwordField;
+    private TextField _emailField;
+    private PasswordField _passwordField;
 
-    Button loginButton;
-    Button registerButton;
+    private Button _loginButton;
+    private Button _registerButton;
 
     public LoginView(Stage stage) {
         Label loginLabel = new Label("Iniciar Sessão");
         loginLabel.getStyleClass().add("label");
 
         // E-mail
-        emailField = new TextField();
-        emailField.setPromptText("E-mail");
-        emailField.getStyleClass().add("text-field");
+        _emailField = new TextField();
+        _emailField.setPromptText("E-mail");
+        _emailField.getStyleClass().add("text-field");
 
         // Senha
-        passwordField = new PasswordField();
-        passwordField.setPromptText("Senha");
-        passwordField.getStyleClass().add("password-field");
+        _passwordField = new PasswordField();
+        _passwordField.setPromptText("Senha");
+        _passwordField.getStyleClass().add("password-field");
 
         // Botão de Login
-        loginButton = new Button("Login");
-        loginButton.getStyleClass().add("button");
+        _loginButton = new Button("Login");
+        _loginButton.getStyleClass().add("button");
 
         // Botão de Registro
         Label registerLabel = new Label("Não tem uma conta ?");
         registerLabel.getStyleClass().add("info-label");
 
-        registerButton = new Button("Cadastre-se");
-        registerButton.getStyleClass().add("button");
+        _registerButton = new Button("Cadastre-se");
+        _registerButton.getStyleClass().add("button");
 
         // Geração da Cena
         VBox layout = new VBox(
             loginLabel, 
-            emailField,
-            passwordField,
-            loginButton,
+            _emailField,
+            _passwordField,
+            _loginButton,
             registerLabel,
-            registerButton
+            _registerButton
             );
         
         layout.getStyleClass().add("vbox");
@@ -61,18 +61,18 @@ public class LoginView {
     }
 
     public TextField getEmailField() {
-        return emailField;
+        return _emailField;
     }
 
     public PasswordField getPasswordField() {
-        return passwordField;
+        return _passwordField;
     }
 
     public Button getLoginButton() {
-        return loginButton;
+        return _loginButton;
     }
 
     public Button getRegisterButton() {
-        return registerButton;
+        return _registerButton;
     }
 }
