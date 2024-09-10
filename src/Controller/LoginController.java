@@ -5,7 +5,9 @@ import java.util.*;
 
 // Local Imports
 import Repository.Repository;
+import View.HomeView;
 import View.LoginView;
+import View.RegisterView;
 import Model.User;
 
 public class LoginController {
@@ -15,8 +17,6 @@ public class LoginController {
     public LoginController(LoginView view, Repository repository) {
         _view = view;
         _repository = repository;
-
-        _repository.addUser(new User("root", "root"));
 
         view.getLoginButton().setOnAction(e -> handleLogin());
         view.getRegisterButton().setOnAction(e -> handleRegister());
@@ -32,12 +32,13 @@ public class LoginController {
         {
             if(user.email.equals(email) && user.password.equals(password))
             {
-                System.out.println("Ok");
+                new HomeView(_view.getStage());
             }
         }
     }
 
     private void handleRegister() {
-
+        RegisterView registerView = new RegisterView(_view.getStage());
+        new RegisterController(registerView, _repository);
     }
 }
