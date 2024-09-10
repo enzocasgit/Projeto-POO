@@ -1,0 +1,45 @@
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 50px;
+    -fx-font-family: "Poppins", sans-serif;
+}
+
+.vbox {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.label {
+    -fx-font-size: 32px;
+    -fx-text-fill: #333333;
+}
+
+.info-label {
+    -fx-font-size: 22px;
+    -fx-text-fill: #333333;
+}
+
+.text-field, .password-field {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 2px;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-max-width: 400px;
+}
+
+.button {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
