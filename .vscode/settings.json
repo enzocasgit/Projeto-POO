@@ -1,0 +1,17 @@
+{
+	"java.project.sourcePaths": [
+		"src"
+	],
+	"java.project.outputPath": "bin",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar",
+		"javafxpath/javafx.base.jar",
+		"javafxpath/javafx.controls.jar",
+		"javafxpath/javafx.fxml.jar",
+		"javafxpath/javafx.graphics.jar",
+		"javafxpath/javafx.media.jar",
+		"javafxpath/javafx.swing.jar",
+		"javafxpath/javafx.web.jar",
+		"javafxpath/javafx-swt.ja"
+	]
+}
