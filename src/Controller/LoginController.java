@@ -32,7 +32,7 @@ public class LoginController {
         {
             if(user.email.equals(email) && user.password.equals(password))
             {
-                new HomeView(_view.getStage());
+                new HomeController(new HomeView(_view.getStage(), user), user, _repository);
             }
         }
     }
