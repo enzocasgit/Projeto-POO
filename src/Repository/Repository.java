@@ -36,4 +36,20 @@ public class Repository {
     {
         _itemList.add(newItem);
     }
+
+    public void editItem(int id, Item editedItem)
+    {
+        for(int i = 0; i < _itemList.size(); i++)
+        {
+            if(_itemList.get(i).id == id)
+            {
+                _itemList.set(i, editedItem);
+            }
+        }
+
+    }
+
+    public void deleteItem(int id) {
+        _itemList.removeIf(item -> item.id == id);
+    }
 }

@@ -25,6 +25,7 @@ public class App extends Application {
 
         _repository.addItem(new Item(0, "teste", "12/09/2024", "Pipinete", "Pipilandia", ItemStatusEnum.Free));
         _repository.addItem(new Item(1, "teste", "12/09/2024", "Pipinete", "Pipilandia", ItemStatusEnum.Reserved));
+        _repository.addItem(new Item(2, "teste", "12/09/2024", "Pipinete", "Pipilandia", ItemStatusEnum.Requested));
 
         LoginView view = new LoginView(primaryStage);
         new LoginController(view, _repository);

@@ -27,7 +27,7 @@ public class RegisterView {
         Label registerLabel = new Label("Cadastrar Usuário");
         registerLabel.getStyleClass().add("label");
 
-        // E-mail
+        // Nome Completo
         _fullnameField = new TextField();
         _fullnameField.setPromptText("Nome Completo");
         _fullnameField.getStyleClass().add("text-field");
@@ -44,7 +44,7 @@ public class RegisterView {
         
         // Senha Repetida
         PasswordField repeatPasswordField = new PasswordField();
-        repeatPasswordField.setPromptText("Senha");
+        repeatPasswordField.setPromptText("Repita a Senha");
         repeatPasswordField.getStyleClass().add("password-field");
 
         // Botões de Cadastro

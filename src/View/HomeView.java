@@ -96,6 +96,12 @@ public class HomeView {
         _stage.show();
     }
 
+    public void clearItemList() {
+        _itemListView.getItems().clear(); 
+
+        addItemListViewHeader(); 
+    }
+
     public Button getAddItemButton() { return _addItemButton; }
 
     public ListView<HBox> getItemListView() { return _itemListView; }
@@ -178,6 +184,12 @@ public class HomeView {
             case Reserved:
                 itemStatusLabel = new Label("Reservado");
                 itemStatusLabel.getStyleClass().add("reserved-status-label");
+
+                itemLayout.getChildren().add(itemStatusLabel);
+                break;
+            case Requested:
+                itemStatusLabel = new Label("Solicitado");
+                itemStatusLabel.getStyleClass().add("requested-status-label");
 
                 itemLayout.getChildren().add(itemStatusLabel);
                 break;
