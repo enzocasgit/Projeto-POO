@@ -22,22 +22,22 @@ public class EditItemView {
 
         // Nome do Item
         itemNameField = new TextField();
-        itemNameField.setPromptText(item.name);
+        itemNameField.setPromptText(item.name.isEmpty() ? "Nome do Item" : item.name);
         itemNameField.getStyleClass().add("text-field");
 
         // Data da Devolução
         itemReturnDateField = new TextField();
-        itemReturnDateField.setPromptText(item.returnDate);
+        itemReturnDateField.setPromptText(item.returnDate.isEmpty() ? "Data da Devolução" : item.returnDate);
         itemReturnDateField.getStyleClass().add("text-field");
 
         // Local de Origem
         itemOriginLocation = new TextField();
-        itemOriginLocation.setPromptText(item.originLocation);
+        itemOriginLocation.setPromptText(item.originLocation.isEmpty() ? "Local de Origem" : item.originLocation);
         itemOriginLocation.getStyleClass().add("password-field");
         
         // Local Atual
         itemCurrentLocation = new TextField();
-        itemCurrentLocation.setPromptText(item.currentLocation);
+        itemCurrentLocation.setPromptText(item.currentLocation.isEmpty() ? "Local Atual" : item.currentLocation);
         itemCurrentLocation.getStyleClass().add("password-field");
 
         // Botão de adicionar

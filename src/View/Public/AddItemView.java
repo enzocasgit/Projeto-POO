@@ -9,9 +9,7 @@ import javafx.stage.Stage;
 
 public class AddItemView {
     public TextField itemNameField;
-    public TextField itemReturnDateField;
     public TextField itemOriginLocation;
-    public TextField itemCurrentLocation;
 
     public Button addItemButton;
 
@@ -25,20 +23,10 @@ public class AddItemView {
         itemNameField.setPromptText("Nome do Item");
         itemNameField.getStyleClass().add("text-field");
 
-        // Data da Devolução
-        itemReturnDateField = new TextField();
-        itemReturnDateField.setPromptText("Data de Devolução");
-        itemReturnDateField.getStyleClass().add("text-field");
-
         // Local de Origem
         itemOriginLocation = new TextField();
         itemOriginLocation.setPromptText("Local de Origem");
         itemOriginLocation.getStyleClass().add("password-field");
-        
-        // Local Atual
-        itemCurrentLocation = new TextField();
-        itemCurrentLocation.setPromptText("Local Atual");
-        itemCurrentLocation.getStyleClass().add("password-field");
 
         // Botão de adicionar
         addItemButton = new Button("Adicionar");
@@ -48,9 +36,7 @@ public class AddItemView {
         VBox layout = new VBox(
             addItemLabel,
             itemNameField,
-            itemReturnDateField,
             itemOriginLocation,
-            itemCurrentLocation,
             addItemButton
         );
         

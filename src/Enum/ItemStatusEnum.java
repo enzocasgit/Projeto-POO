@@ -3,5 +3,6 @@ package Enum;
 public enum ItemStatusEnum {
     Free,
     Reserved,
-    Requested
+    Requested,
+    Rejected
 }

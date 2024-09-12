@@ -24,32 +24,55 @@ public class HomeView {
         _stage = stage;
 
         if(user instanceof Student) {
-            LoadStudentView((Student) user);
+            LoadStudentView();
         }
         else if (user instanceof Admin) {
-            LoadAdminView((Admin) user);
+            LoadAdminView();
         }
         else {
             // Do something (*^*) ! I don't know what haha !
         }
     }
 
-    private void LoadStudentView(Student student)
+    private void LoadStudentView()
     {
+        Label itemListLabel = new Label("Reserva de Bens");
+        itemListLabel.getStyleClass().add("label");
+
+        // Adicionando estilo ao ListView
+        _itemListView.getStyleClass().add("list-view");
+
+        // Botão de Sair
+        _logoffButton = new Button("Sair");
+        _logoffButton.getStyleClass().add("button");
+
+        VBox footer = new VBox(
+            _logoffButton
+        );
+
+        footer.getStyleClass().add("footer-vbox");
+
+        // Adiciona Header a Lista
+        addItemListViewHeader();
+
         // Geração da Cena
-        VBox layout = new VBox();
+        VBox layout = new VBox(
+            itemListLabel,
+            _itemListView,
+            footer
+        );
         
         layout.getStyleClass().add("vbox");
 
         Scene scene = new Scene(layout, 1280, 720);
         scene.getStylesheets().add(getClass().getResource("/Style/style.css").toExternalForm());
-                
+
         _stage.setScene(scene);
         _stage.setTitle("Home Student");
         _stage.show();
     }
 
-    private void LoadAdminView(Admin admin)
+    private void LoadAdminView()
     {
         Label itemListLabel = new Label("Administração de Bens");
         itemListLabel.getStyleClass().add("label");
@@ -151,16 +174,16 @@ public class HomeView {
         Label itemIdLabel = new Label(Integer.toString(item.id));
         itemIdLabel.getStyleClass().add("short-info-label");
 
-        Label itemNameLabel = new Label(item.name);
+        Label itemNameLabel = new Label(item.name.isEmpty() ? "N/A" : item.name);
         itemNameLabel.getStyleClass().add("short-info-label");
 
-        Label itemReturnDateLabel = new Label(item.returnDate);
+        Label itemReturnDateLabel = new Label(item.returnDate.isEmpty() ? "N/A" : item.returnDate);
         itemReturnDateLabel.getStyleClass().add("short-info-label");
 
-        Label itemOriginLocationLabel = new Label(item.originLocation);
+        Label itemOriginLocationLabel = new Label(item.originLocation.isEmpty() ? "N/A" : item.originLocation);
         itemOriginLocationLabel.getStyleClass().add("short-info-label");
 
-        Label itemCurrentLocationLabel = new Label(item.currentLocation);
+        Label itemCurrentLocationLabel = new Label(item.currentLocation.isEmpty() ? "N/A" : item.currentLocation);
         itemCurrentLocationLabel.getStyleClass().add("short-info-label");
 
         HBox itemLayout = new HBox(
@@ -190,6 +213,12 @@ public class HomeView {
             case Requested:
                 itemStatusLabel = new Label("Solicitado");
                 itemStatusLabel.getStyleClass().add("requested-status-label");
+
+                itemLayout.getChildren().add(itemStatusLabel);
+                break;
+            case Rejected:
+                itemStatusLabel = new Label("Rejeitado");
+                itemStatusLabel.getStyleClass().add("rejected-status-label");
 
                 itemLayout.getChildren().add(itemStatusLabel);
                 break;
