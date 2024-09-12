@@ -52,6 +52,10 @@ public class RegisterController {
 
     private void handleRegisterStudentButton(Student student)
     {
+        student.idNumber = _studentView.getIdNumberField().getText();
+        student.degree = _studentView.getDegreeField().getText();
+        student.organization = _studentView.getOrganizationField().getText();
+
         _repository.addUser(student);
 
         new LoginController(new LoginView(_studentView.getStage()), _repository);
@@ -68,6 +72,11 @@ public class RegisterController {
     }
 
     private void handleRegisterAdminButton(Admin admin) {
+        admin.siape = _adminView.getIdNumberField().getText();
+        admin.role = _adminView.getRoleField().getText();
+        admin.organization = _adminView.getOrganizationField().getText();
+        admin.degree = _adminView.getDegreeField().getText();
+
         _repository.addUser(admin);
 
         new LoginController(new LoginView(_adminView.getStage()), _repository);

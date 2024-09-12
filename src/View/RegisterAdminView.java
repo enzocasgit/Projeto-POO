@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class RegisterAdminView {
     private Stage _stage;
 
-    private TextField _adminIdField;
+    private TextField _adminIdNumberField;
     private TextField _adminRole;
     private TextField _adminOrganizationField;
     private TextField _adminDegreeField;
@@ -25,9 +25,9 @@ public class RegisterAdminView {
         registerAdminLabel.getStyleClass().add("label");
 
         // Matricula
-        _adminIdField = new TextField();
-        _adminIdField.setPromptText("Matricula SIAPE");
-        _adminIdField.getStyleClass().add("text-field");
+        _adminIdNumberField = new TextField();
+        _adminIdNumberField.setPromptText("SIAPE");
+        _adminIdNumberField.getStyleClass().add("text-field");
   
         // Ocupação
         _adminRole = new TextField();
@@ -51,7 +51,7 @@ public class RegisterAdminView {
         // Geração da Cena
         VBox layout = new VBox(
             registerAdminLabel,
-            _adminIdField,
+            _adminIdNumberField,
             _adminRole,
             _adminOrganizationField,
             _adminDegreeField,
@@ -67,6 +67,14 @@ public class RegisterAdminView {
         stage.setTitle("Registering Student ...");
         stage.show();
     }
+
+    public TextField getIdNumberField() { return _adminIdNumberField; }
+
+    public TextField getRoleField() { return _adminRole; }
+
+    public TextField getOrganizationField() { return _adminOrganizationField; }
+
+    public TextField getDegreeField() { return _adminDegreeField; }
 
     public Button getRegisterAdminButton()
     {

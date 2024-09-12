@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class RegisterStudentView {
     private Stage _stage;
     
-    private TextField _studentIdField;
+    private TextField _studentIdNumberField;
     private TextField _studentDegreeField;
     private TextField _studentOrganizationField;
 
@@ -24,9 +24,9 @@ public class RegisterStudentView {
         registerStudentLabel.getStyleClass().add("label");
 
         // Matricula
-        _studentIdField = new TextField();
-        _studentIdField.setPromptText("Matricula");
-        _studentIdField.getStyleClass().add("text-field");
+        _studentIdNumberField = new TextField();
+        _studentIdNumberField.setPromptText("Matricula");
+        _studentIdNumberField.getStyleClass().add("text-field");
 
         // Curso
         _studentDegreeField = new TextField();
@@ -45,7 +45,7 @@ public class RegisterStudentView {
         // Geração da Cena
         VBox layout = new VBox(
             registerStudentLabel,
-            _studentIdField,
+            _studentIdNumberField,
             _studentDegreeField,
             _studentOrganizationField,
             _registerStudentButton
@@ -60,6 +60,12 @@ public class RegisterStudentView {
         stage.setTitle("Registering Student ...");
         stage.show();
     }
+
+    public TextField getIdNumberField() { return _studentIdNumberField; }
+
+    public TextField getDegreeField() { return _studentDegreeField; }
+
+    public TextField getOrganizationField() { return _studentOrganizationField; }
 
     public Button getRegisterStudentButton()
     {

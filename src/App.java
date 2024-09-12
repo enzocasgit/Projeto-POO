@@ -5,7 +5,8 @@ import javafx.stage.Stage;
 // Local Imports
 import View.LoginView;
 import Controller.LoginController;
-import Model.User;
+import Model.Admin;
+import Model.Student;
 import Repository.Repository;
 
 public class App extends Application {
@@ -17,7 +18,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        _repository.addUser(new User("user", "user", "user")); // Add default user
+        _repository.addUser(new Student("student", "student", "student")); // Add default student user
+        _repository.addUser(new Admin("admin", "admin", "admin")); // Add default admin user
 
         LoginView view = new LoginView(primaryStage);
         new LoginController(view, _repository);
